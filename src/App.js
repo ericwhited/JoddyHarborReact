@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import Character from './components/Character';
 import './App.css';
+import jobs from './jobs'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img className="ms2Logo" src="/assets/logo.png" alt="logo"/>
+      <div className="characterBox">
+        {jobs.map(function(job){
+          return (
+            <Character
+              key={job.name}
+              name={job.name}
+            />
+          )
+        })}
+      </div>
     </div>
   );
 }
